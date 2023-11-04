@@ -6,7 +6,7 @@ import { CafesService } from './cafes.service';
 @Component({
   selector: 'app-cafes',
   templateUrl: './cafes.component.html',
-  styleUrls: ['./cafes.component.css'],
+  styleUrls: ['./cafes.component.scss'],
 })
 export class CafesComponent implements OnInit {
   cafes: Cafe[] = [];
