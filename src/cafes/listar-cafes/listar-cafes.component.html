@@ -1,9 +1,9 @@
 <div class="pb-5 px-5">
   <div class="row img-max text-shadow">
-    <div class="col-12">
+    <div class="col-10">
       <h1 class="indie-flower-text">El aroma mágico</h1>
     </div>
-    <div class="col-12">
+    <div class="col-10">
       <img src="/assets/image_1.png" alt="imagen header" />
       <hr class="hr" />
     </div>
@@ -30,6 +30,14 @@
           </tr>
         </tbody>
       </table>
+    </div>
+  </div>
+  <div class="row tipos-text">
+    <div class="col-12">
+      <p class="mb-0">
+        Total café de origen: {{ getTotalPorTipo(TIPO_ORIGEN) }}
+      </p>
+      <p class="mt-0">Total café blend: {{ getTotalPorTipo(TIPO_BLEND) }}</p>
     </div>
   </div>
   <div class="row fixed-bottom pb-5">
