@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CafesComponent } from './cafes.component';
+import { ListarCafesComponent } from './listar-cafes/listar-cafes.component';
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [CafesComponent],
-  exports: [CafesComponent],
+  declarations: [ListarCafesComponent],
+  exports: [ListarCafesComponent],
 })
 export class CafesModule {}

@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Cafe } from 'src/models/Cafe';
-import { CafesService } from './cafes.service';
+import { CafesService } from '../cafes.service';
 
 @Component({
-  selector: 'app-cafes',
-  templateUrl: './cafes.component.html',
-  styleUrls: ['./cafes.component.scss'],
+  selector: 'app-listar-cafes',
+  templateUrl: './listar-cafes.component.html',
+  styleUrls: ['./listar-cafes.component.scss'],
 })
-export class CafesComponent implements OnInit {
+export class ListarCafesComponent implements OnInit {
   cafes: Cafe[] = [];
   estaCargando: boolean = false;
   huboError: boolean = false;
