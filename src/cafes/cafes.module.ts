@@ -5,5 +5,6 @@ import { CafesComponent } from './cafes.component';
 @NgModule({
   imports: [CommonModule],
   declarations: [CafesComponent],
+  exports: [CafesComponent],
 })
 export class CafesModule {}
