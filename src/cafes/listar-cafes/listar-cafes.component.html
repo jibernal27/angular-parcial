@@ -33,7 +33,7 @@
     </div>
   </div>
   <div class="row tipos-text" *ngIf="!huboError && !estaCargando">
-    <div class="col-12">
+    <div class="col-10">
       <p class="mb-0">
         Total café de origen: {{ getTotalPorTipo(TIPO_ORIGEN) }}
       </p>
@@ -41,7 +41,7 @@
     </div>
   </div>
   <div class="row" *ngIf="huboError && !estaCargando">
-    <div class="col-12 position-relative">
+    <div class="col-10 position-relative">
       <div
         class="alert alert-danger position-absolute top-0 start-0"
         role="alert"
@@ -51,7 +51,7 @@
     </div>
   </div>
   <div class="row fixed-bottom pb-5">
-    <div class="col-12 position-relative">
+    <div class="col-10 position-relative">
       <p class="position-absolute top-100 start-50 translate-middle fw-light">
         Contact us: +57 3102105253 - info@elaromamagico.com - @elaromamagico
       </p>
