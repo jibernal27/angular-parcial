@@ -65,12 +65,55 @@ describe('ListarCafesComponent', () => {
     });
   });
   it('Debe mostrar el total de origen y blend', () => {
-    fail('No implementado');
+    const validarTotales = (expectedBlend: number, totalOrigen: number) => {
+      fixture.detectChanges();
+      const divTipos = fixture.debugElement.query(By.css('.row.tipos-text'));
+      const p = divTipos.queryAll(By.css('p'));
+      expect(p.length).toBe(2);
+      expect(expectedBlend + totalOrigen).toBe(component.cafes.length);
+      const origen = p[0].nativeElement;
+      const blend = p[1].nativeElement;
+      expect(origen.textContent).toContain(
+        `Total café de origen: ${totalOrigen}`
+      );
+      expect(blend.textContent).toContain(`Total café blend: ${expectedBlend}`);
+    };
+
+    // Resultados random
+    const expectedOrigen: number = component.cafes.filter(
+      (cafe) => cafe.tipo == 'Café de Origen'
+    ).length;
+    const expectedBlend: number = component.cafes.filter(
+      (cafe) => cafe.tipo == 'Blend'
+    ).length;
+    validarTotales(expectedBlend, expectedOrigen);
+
+    // Solo blend
+    component.cafes = generarCafes(10).map((cafe) => {
+      cafe.tipo = 'Blend';
+      return cafe;
+    });
+    validarTotales(10, 0);
+
+    // Solo origen
+    component.cafes = generarCafes(10).map((cafe) => {
+      cafe.tipo = 'Café de Origen';
+      return cafe;
+    });
+    validarTotales(0, 10);
   });
   it('Debe tener el footer', () => {
-    fail('No implementado');
+    const footer = fixture.debugElement.query(By.css('.fixed-bottom'));
+    expect(footer.nativeElement.textContent).toContain(
+      'Contact us: +57 3102105253 - info@elaromamagico.com - @elaromamagico'
+    );
   });
-  it('Debe mostrar error', () => {
-    fail('No implementado');
+  it('Debe mostrar error cuando sea necesario', () => {
+    component.huboError = true;
+    fixture.detectChanges();
+    const alert = fixture.debugElement.query(By.css('.alert-danger'));
+    expect(alert.nativeElement.textContent).toContain(
+      'Hubo un error al cargar los cafés. Por favor, intente nuevamente.'
+    );
   });
 });

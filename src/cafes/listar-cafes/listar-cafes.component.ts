@@ -21,6 +21,7 @@ export class ListarCafesComponent implements OnInit {
 
   getCafes() {
     this.estaCargando = true;
+    this.huboError = false;
     this.cafes = [];
     this.cafeService.getCafes().subscribe({
       next: (cafes) => {

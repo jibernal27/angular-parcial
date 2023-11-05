@@ -8,7 +8,7 @@
       <hr class="hr" />
     </div>
   </div>
-  <div class="row text-shadow py-2">
+  <div class="row text-shadow py-2" *ngIf="!huboError && !estaCargando">
     <div class="col-5">
       <table class="table table-hover table-text">
         <thead class="table-dark">
@@ -32,12 +32,22 @@
       </table>
     </div>
   </div>
-  <div class="row tipos-text">
+  <div class="row tipos-text" *ngIf="!huboError && !estaCargando">
     <div class="col-12">
       <p class="mb-0">
         Total café de origen: {{ getTotalPorTipo(TIPO_ORIGEN) }}
       </p>
       <p class="mt-0">Total café blend: {{ getTotalPorTipo(TIPO_BLEND) }}</p>
+    </div>
+  </div>
+  <div class="row" *ngIf="huboError && !estaCargando">
+    <div class="col-12 position-relative">
+      <div
+        class="alert alert-danger position-absolute top-0 start-0"
+        role="alert"
+      >
+        Hubo un error al cargar los cafés. Por favor, intente nuevamente.
+      </div>
     </div>
   </div>
   <div class="row fixed-bottom pb-5">
