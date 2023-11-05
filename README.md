@@ -4,7 +4,7 @@ Evaluación Práctica Angular MISW-4104
 
 ## Resultado
 
-![image](https://github.com/jibernal27/angular-parcial/assets/10744050/77790e39-a980-4307-a667-e9ca0ed4ffcd)
+![image](https://github.com/jibernal27/angular-parcial/assets/10744050/40dbb43d-a9ed-4f31-962f-8dc8e3ca912f)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.7.
 
