@@ -1,5 +1,5 @@
 export class Cafe {
-  id: string;
+  id: number;
   nombre: string;
   tipo: string;
   region: string;
@@ -8,7 +8,7 @@ export class Cafe {
   imagen: string;
 
   constructor(
-    id: string,
+    id: number,
     nombre: string,
     tipo: string,
     region: string,
